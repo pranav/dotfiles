@@ -17,32 +17,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-" Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-
-" Define bundles via Github repos
-Bundle 'croaky/vim-colors-github'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'nanki/treetop.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/tComment'
-Bundle 'xenoterracide/html.vim'
-
 filetype plugin indent on
 
 augroup vimrcEx
@@ -77,11 +51,6 @@ endif
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
-
-" Color scheme
-colorscheme github
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
@@ -176,3 +145,8 @@ endfunction
 function! RunSpecs(command)
   execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
 endfunction
+
+
+syntax enable
+set background=dark
+colorscheme solarized

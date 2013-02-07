@@ -21,7 +21,7 @@ if [ -e "$HOME/.aliases" ]; then
 fi
 
 # vi mode
-bindkey -v
+bindkey -e
 bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
 
