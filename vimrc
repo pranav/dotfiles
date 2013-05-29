@@ -148,8 +148,15 @@ function! RunSpecs(command)
   execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
 endfunction
 
+function! CleanTrailingWhitespace()
+    :silent! %s/\s\+$//
+endfunction
+
+autocmd BufWritePre * :call CleanTrailingWhitespace()
+au BufEnter *.pp set ts=2 sw=2 et
+au BufEnter *.rb set ts=2 sw=2 et
 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 hi Normal ctermbg=NONE
