@@ -19,6 +19,8 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+execute pathogen#infect()
+
 filetype plugin indent on
 
 augroup vimrcEx
@@ -156,7 +158,33 @@ autocmd BufWritePre * :call CleanTrailingWhitespace()
 au BufEnter *.pp set ts=2 sw=2 et
 au BufEnter *.rb set ts=2 sw=2 et
 
+" Declare bundles are handled via Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Define bundles via Github repos
+Bundle 'croaky/vim-colors-github'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nanki/treetop.vim'
+Bundle 'timcharper/textile.vim'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/ctags.vim'
+Bundle 'vim-scripts/greplace.vim'
+Bundle 'vim-scripts/tComment'
+Bundle 'xenoterracide/html.vim'
+
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 hi Normal ctermbg=NONE
